@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "DetailViewController.h"
 
-@interface MasterViewController : UITableViewController
 
+@interface MasterViewController : UITableViewController<NSFetchedResultsControllerDelegate,FavoriteObjectDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 

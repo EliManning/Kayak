@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EB815B21B842FB000D7019B /* Airline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB815B11B842FB000D7019B /* Airline.m */; };
 		0EE893471B80E11A0095EE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893461B80E11A0095EE9B /* main.m */; };
 		0EE8934A1B80E11A0095EE9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893491B80E11A0095EE9B /* AppDelegate.m */; };
 		0EE8934D1B80E11A0095EE9B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8934C1B80E11A0095EE9B /* MasterViewController.m */; };
@@ -15,6 +16,11 @@
 		0EE893551B80E11A0095EE9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE893541B80E11A0095EE9B /* Images.xcassets */; };
 		0EE893581B80E11A0095EE9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE893561B80E11A0095EE9B /* LaunchScreen.xib */; };
 		0EE893641B80E11A0095EE9B /* KayakExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893631B80E11A0095EE9B /* KayakExerciseTests.m */; };
+		0EE893721B815AE70095EE9B /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893711B815AE70095EE9B /* DataManager.m */; };
+		0EE893781B815ED70095EE9B /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893771B815ED70095EE9B /* Constant.m */; };
+		0EE893891B82C88E0095EE9B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */; };
+		0EE8939E1B8407550095EE9B /* DataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8939D1B8407550095EE9B /* DataObject.m */; };
+		52EA3FEDC1BB3FE3561AE76B /* libPods-KayakExercise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0179A1C2E4CAD33351899AD /* libPods-KayakExercise.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EB815B01B842FB000D7019B /* Airline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airline.h; sourceTree = "<group>"; };
+		0EB815B11B842FB000D7019B /* Airline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airline.m; sourceTree = "<group>"; };
 		0EE893411B80E11A0095EE9B /* KayakExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KayakExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE893451B80E11A0095EE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE893461B80E11A0095EE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,6 +51,16 @@
 		0EE8935D1B80E11A0095EE9B /* KayakExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KayakExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE893621B80E11A0095EE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE893631B80E11A0095EE9B /* KayakExerciseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KayakExerciseTests.m; sourceTree = "<group>"; };
+		0EE893701B815AE70095EE9B /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		0EE893711B815AE70095EE9B /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		0EE893761B815ED70095EE9B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		0EE893771B815ED70095EE9B /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
+		0EE893881B82C88E0095EE9B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		0EE8939C1B8407550095EE9B /* DataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataObject.h; sourceTree = "<group>"; };
+		0EE8939D1B8407550095EE9B /* DataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObject.m; sourceTree = "<group>"; };
+		5B2827675D57B8A05306B33F /* Pods-KayakExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KayakExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-KayakExercise/Pods-KayakExercise.release.xcconfig"; sourceTree = "<group>"; };
+		82F6B0DDE378F28328D18552 /* Pods-KayakExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KayakExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KayakExercise/Pods-KayakExercise.debug.xcconfig"; sourceTree = "<group>"; };
+		E0179A1C2E4CAD33351899AD /* libPods-KayakExercise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KayakExercise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EA3FEDC1BB3FE3561AE76B /* libPods-KayakExercise.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +88,8 @@
 				0EE893431B80E11A0095EE9B /* KayakExercise */,
 				0EE893601B80E11A0095EE9B /* KayakExerciseTests */,
 				0EE893421B80E11A0095EE9B /* Products */,
+				2DA7531EEAC6D4532B04165A /* Pods */,
+				FDCA51C3CA48AFD366F8E450 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +111,15 @@
 				0EE8934C1B80E11A0095EE9B /* MasterViewController.m */,
 				0EE8934E1B80E11A0095EE9B /* DetailViewController.h */,
 				0EE8934F1B80E11A0095EE9B /* DetailViewController.m */,
+				0EE8939C1B8407550095EE9B /* DataObject.h */,
+				0EE8939D1B8407550095EE9B /* DataObject.m */,
+				0EE893701B815AE70095EE9B /* DataManager.h */,
+				0EE893711B815AE70095EE9B /* DataManager.m */,
+				0EE893761B815ED70095EE9B /* Constant.h */,
+				0EE893771B815ED70095EE9B /* Constant.m */,
+				0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */,
+				0EB815B01B842FB000D7019B /* Airline.h */,
+				0EB815B11B842FB000D7019B /* Airline.m */,
 				0EE893511B80E11A0095EE9B /* Main.storyboard */,
 				0EE893541B80E11A0095EE9B /* Images.xcassets */,
 				0EE893561B80E11A0095EE9B /* LaunchScreen.xib */,
@@ -124,6 +154,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2DA7531EEAC6D4532B04165A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82F6B0DDE378F28328D18552 /* Pods-KayakExercise.debug.xcconfig */,
+				5B2827675D57B8A05306B33F /* Pods-KayakExercise.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FDCA51C3CA48AFD366F8E450 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0179A1C2E4CAD33351899AD /* libPods-KayakExercise.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0EE893671B80E11A0095EE9B /* Build configuration list for PBXNativeTarget "KayakExercise" */;
 			buildPhases = (
+				8B55F4537C094080AABF3E30 /* Check Pods Manifest.lock */,
 				0EE8933D1B80E11A0095EE9B /* Sources */,
 				0EE8933E1B80E11A0095EE9B /* Frameworks */,
 				0EE8933F1B80E11A0095EE9B /* Resources */,
+				9F92DA30F9EBE17134CF2865 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,14 +268,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8B55F4537C094080AABF3E30 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9F92DA30F9EBE17134CF2865 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KayakExercise/Pods-KayakExercise-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0EE8933D1B80E11A0095EE9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB815B21B842FB000D7019B /* Airline.m in Sources */,
 				0EE8934A1B80E11A0095EE9B /* AppDelegate.m in Sources */,
+				0EE8939E1B8407550095EE9B /* DataObject.m in Sources */,
+				0EE893721B815AE70095EE9B /* DataManager.m in Sources */,
+				0EE893781B815ED70095EE9B /* Constant.m in Sources */,
 				0EE8934D1B80E11A0095EE9B /* MasterViewController.m in Sources */,
 				0EE893471B80E11A0095EE9B /* main.m in Sources */,
+				0EE893891B82C88E0095EE9B /* DataModel.xcdatamodeld in Sources */,
 				0EE893501B80E11A0095EE9B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +438,7 @@
 		};
 		0EE893681B80E11A0095EE9B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F6B0DDE378F28328D18552 /* Pods-KayakExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KayakExercise/Info.plist;
@@ -361,6 +449,7 @@
 		};
 		0EE893691B80E11A0095EE9B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B2827675D57B8A05306B33F /* Pods-KayakExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KayakExercise/Info.plist;
@@ -422,6 +511,7 @@
 				0EE893691B80E11A0095EE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EE8936A1B80E11A0095EE9B /* Build configuration list for PBXNativeTarget "KayakExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -430,8 +520,22 @@
 				0EE8936C1B80E11A0095EE9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0EE893881B82C88E0095EE9B /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 0EE893881B82C88E0095EE9B /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0EE893391B80E11A0095EE9B /* Project object */;
 }
