@@ -1,5 +1,4 @@
 //
-//  Entity.h
 //  KayakExercise
 //
 //  Created by Er Li on 8/18/15.

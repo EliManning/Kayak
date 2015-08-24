@@ -7,19 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2F44951B8AEEDA00068F8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E2F44941B8AEEDA00068F8C /* Images.xcassets */; };
 		0EB815B21B842FB000D7019B /* Airline.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB815B11B842FB000D7019B /* Airline.m */; };
 		0EE893471B80E11A0095EE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893461B80E11A0095EE9B /* main.m */; };
 		0EE8934A1B80E11A0095EE9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893491B80E11A0095EE9B /* AppDelegate.m */; };
 		0EE8934D1B80E11A0095EE9B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8934C1B80E11A0095EE9B /* MasterViewController.m */; };
 		0EE893501B80E11A0095EE9B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8934F1B80E11A0095EE9B /* DetailViewController.m */; };
 		0EE893531B80E11A0095EE9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE893511B80E11A0095EE9B /* Main.storyboard */; };
-		0EE893551B80E11A0095EE9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE893541B80E11A0095EE9B /* Images.xcassets */; };
 		0EE893581B80E11A0095EE9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE893561B80E11A0095EE9B /* LaunchScreen.xib */; };
 		0EE893641B80E11A0095EE9B /* KayakExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893631B80E11A0095EE9B /* KayakExerciseTests.m */; };
-		0EE893721B815AE70095EE9B /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893711B815AE70095EE9B /* DataManager.m */; };
 		0EE893781B815ED70095EE9B /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893771B815ED70095EE9B /* Constant.m */; };
 		0EE893891B82C88E0095EE9B /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */; };
-		0EE8939E1B8407550095EE9B /* DataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE8939D1B8407550095EE9B /* DataObject.m */; };
 		52EA3FEDC1BB3FE3561AE76B /* libPods-KayakExercise.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0179A1C2E4CAD33351899AD /* libPods-KayakExercise.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2F44941B8AEEDA00068F8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EB815B01B842FB000D7019B /* Airline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airline.h; sourceTree = "<group>"; };
 		0EB815B11B842FB000D7019B /* Airline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airline.m; sourceTree = "<group>"; };
 		0EE893411B80E11A0095EE9B /* KayakExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KayakExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,18 +45,13 @@
 		0EE8934E1B80E11A0095EE9B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0EE8934F1B80E11A0095EE9B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		0EE893521B80E11A0095EE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0EE893541B80E11A0095EE9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EE893571B80E11A0095EE9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0EE8935D1B80E11A0095EE9B /* KayakExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KayakExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE893621B80E11A0095EE9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EE893631B80E11A0095EE9B /* KayakExerciseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KayakExerciseTests.m; sourceTree = "<group>"; };
-		0EE893701B815AE70095EE9B /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
-		0EE893711B815AE70095EE9B /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		0EE893761B815ED70095EE9B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		0EE893771B815ED70095EE9B /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		0EE893881B82C88E0095EE9B /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		0EE8939C1B8407550095EE9B /* DataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataObject.h; sourceTree = "<group>"; };
-		0EE8939D1B8407550095EE9B /* DataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObject.m; sourceTree = "<group>"; };
 		5B2827675D57B8A05306B33F /* Pods-KayakExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KayakExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-KayakExercise/Pods-KayakExercise.release.xcconfig"; sourceTree = "<group>"; };
 		82F6B0DDE378F28328D18552 /* Pods-KayakExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KayakExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KayakExercise/Pods-KayakExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		E0179A1C2E4CAD33351899AD /* libPods-KayakExercise.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KayakExercise.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +76,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2F44961B8AEFCF00068F8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0EE8934B1B80E11A0095EE9B /* MasterViewController.h */,
+				0EE8934C1B80E11A0095EE9B /* MasterViewController.m */,
+				0EE8934E1B80E11A0095EE9B /* DetailViewController.h */,
+				0EE8934F1B80E11A0095EE9B /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0E2F44971B8AEFE000068F8C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0EE893761B815ED70095EE9B /* Constant.h */,
+				0EE893771B815ED70095EE9B /* Constant.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		0E2F44981B8AEFFB00068F8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */,
+				0EB815B01B842FB000D7019B /* Airline.h */,
+				0EB815B11B842FB000D7019B /* Airline.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0E2F44991B8AF00900068F8C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0EE893511B80E11A0095EE9B /* Main.storyboard */,
+				0EE893561B80E11A0095EE9B /* LaunchScreen.xib */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
 		0EE893381B80E11A0095EE9B = {
 			isa = PBXGroup;
 			children = (
@@ -107,22 +140,11 @@
 			children = (
 				0EE893481B80E11A0095EE9B /* AppDelegate.h */,
 				0EE893491B80E11A0095EE9B /* AppDelegate.m */,
-				0EE8934B1B80E11A0095EE9B /* MasterViewController.h */,
-				0EE8934C1B80E11A0095EE9B /* MasterViewController.m */,
-				0EE8934E1B80E11A0095EE9B /* DetailViewController.h */,
-				0EE8934F1B80E11A0095EE9B /* DetailViewController.m */,
-				0EE8939C1B8407550095EE9B /* DataObject.h */,
-				0EE8939D1B8407550095EE9B /* DataObject.m */,
-				0EE893701B815AE70095EE9B /* DataManager.h */,
-				0EE893711B815AE70095EE9B /* DataManager.m */,
-				0EE893761B815ED70095EE9B /* Constant.h */,
-				0EE893771B815ED70095EE9B /* Constant.m */,
-				0EE893871B82C88E0095EE9B /* DataModel.xcdatamodeld */,
-				0EB815B01B842FB000D7019B /* Airline.h */,
-				0EB815B11B842FB000D7019B /* Airline.m */,
-				0EE893511B80E11A0095EE9B /* Main.storyboard */,
-				0EE893541B80E11A0095EE9B /* Images.xcassets */,
-				0EE893561B80E11A0095EE9B /* LaunchScreen.xib */,
+				0E2F44961B8AEFCF00068F8C /* Controller */,
+				0E2F44971B8AEFE000068F8C /* Utilities */,
+				0E2F44981B8AEFFB00068F8C /* Model */,
+				0E2F44991B8AF00900068F8C /* Storyboard */,
+				0E2F44941B8AEEDA00068F8C /* Images.xcassets */,
 				0EE893441B80E11A0095EE9B /* Supporting Files */,
 			);
 			path = KayakExercise;
@@ -253,9 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2F44951B8AEEDA00068F8C /* Images.xcassets in Resources */,
 				0EE893531B80E11A0095EE9B /* Main.storyboard in Resources */,
 				0EE893581B80E11A0095EE9B /* LaunchScreen.xib in Resources */,
-				0EE893551B80E11A0095EE9B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +330,6 @@
 			files = (
 				0EB815B21B842FB000D7019B /* Airline.m in Sources */,
 				0EE8934A1B80E11A0095EE9B /* AppDelegate.m in Sources */,
-				0EE8939E1B8407550095EE9B /* DataObject.m in Sources */,
-				0EE893721B815AE70095EE9B /* DataManager.m in Sources */,
 				0EE893781B815ED70095EE9B /* Constant.m in Sources */,
 				0EE8934D1B80E11A0095EE9B /* MasterViewController.m in Sources */,
 				0EE893471B80E11A0095EE9B /* main.m in Sources */,

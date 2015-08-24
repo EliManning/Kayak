@@ -88,7 +88,6 @@
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
-    // add the default store to our coordinator
     NSError *error;
     NSURL *defaultStoreURL = [NSURL fileURLWithPath:documentsStorePath];
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType

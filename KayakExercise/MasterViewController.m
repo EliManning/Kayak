@@ -10,7 +10,6 @@
 #import "DetailViewController.h"
 #import <AFHTTPRequestOperationManager.h>
 #import <AFNetworking.h>
-#import "DataObject.h"
 #import <UIImageView+AFNetworking.h>
 #import <MBProgressHUD.h>
 #import "Constant.h"
@@ -21,7 +20,8 @@ static NSString *dataUrl = @"https://www.kayak.com/h/mobileapis/directory/airlin
 static NSString *kCellIndentifier = @"Cell";
 
 @interface MasterViewController ()
-@property NSMutableArray *objects;
+@property (nonatomic) NSMutableArray *favObjects;
+@property (nonatomic) NSMutableArray *objects;
 @property (assign) BOOL showFavMode;
 @end
 
@@ -35,9 +35,7 @@ static NSString *kCellIndentifier = @"Cell";
     [super viewDidLoad];
     
     self.showFavMode = NO;
-    
     self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate]managedObjectContext];
-    
     [self getAllObjects];
     
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc]initWithTitle:@"Show Favorite" style:UIBarButtonItemStyleDone target:self action:@selector(toggleFavButton:)];
@@ -49,6 +47,7 @@ static NSString *kCellIndentifier = @"Cell";
     
     if(self.showFavMode){
         [self getfavouriteObjects];
+        [self.tableView reloadData];
     }
 }
 
@@ -57,38 +56,36 @@ static NSString *kCellIndentifier = @"Cell";
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark get favorite
+#pragma mark toggle buttons
 
 -(void)toggleFavButton:(id)sender{
     
     if(!self.showFavMode){
-        
         [self.navigationItem.rightBarButtonItem setTitle:@"Show All"];
         self.showFavMode = YES;
         [self getfavouriteObjects];
-        
+        [self.tableView reloadData];
     }
     else{
-        
         [self.navigationItem.rightBarButtonItem setTitle:@"Show Favorite"];
         self.showFavMode = NO;
-        [self getAllObjects];
-        
+        [self.tableView reloadData];
+
     }
-    
 }
 
--(void)getfavouriteObjects{
+#pragma mark get items
+
+-(NSMutableArray *)getfavouriteObjects{
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Airline"];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:kJSONDataKeyCode ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFavorite == %@", [NSNumber numberWithBool:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFavorite == %@", [NSNumber numberWithBool:YES]];
     [fetchRequest setPredicate:predicate];
-    self.objects = [[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    
-    [self.tableView reloadData];
+    self.favObjects = [[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    return self.favObjects;
 }
 
 -(void)getAllObjects{
@@ -102,7 +99,6 @@ static NSString *kCellIndentifier = @"Cell";
         }
     }];
 }
-
 
 #pragma mark Parse Data
 
@@ -132,29 +128,23 @@ static NSString *kCellIndentifier = @"Cell";
             [MBProgressHUD hideHUDForView:self.view animated:YES];
             completionBlock(NO, error);
         });
-        
     }];
-    
 }
 
 -(NSMutableArray *)getParsedDataArray:(NSArray *)JSONArray{
     
     NSMutableArray *parsedInfoArray = [[NSMutableArray alloc] init];
-
+    
     for (NSDictionary *dataDic in JSONArray) {
-        
         NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:@"Airline" inManagedObjectContext:self.managedObjectContext];
-        
         for (NSString *key in dataDic) {
             if ([object respondsToSelector:NSSelectorFromString(key)]) {
                 [object setValue:[dataDic valueForKey:key] forKey:key];
             }
         }
-        
         [parsedInfoArray addObject:object];
-        
     }
-
+    
     return parsedInfoArray;
 }
 
@@ -164,20 +154,27 @@ static NSString *kCellIndentifier = @"Cell";
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *detailVC = [segue destinationViewController];
-        NSManagedObject *airlineObject = [self.objects objectAtIndex:indexPath.row];
-        [detailVC setManagedObject:airlineObject];
+        NSManagedObject *airlineObject ;
+        if(self.showFavMode){
+            airlineObject = [self.favObjects objectAtIndex:indexPath.row];
+        }else{
+            airlineObject = [self.objects objectAtIndex:indexPath.row];
+        }
+        [detailVC setDetailObject:airlineObject];
         detailVC.delegate = self;
     }
 }
 
-#pragma mark - Table View
+#pragma mark - Table View delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+    if(self.showFavMode){
+        return self.favObjects.count;
+    }
     return self.objects.count;
 }
 
@@ -185,7 +182,13 @@ static NSString *kCellIndentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIndentifier forIndexPath:indexPath];
     
-    NSManagedObject *airline = [self.objects objectAtIndex:indexPath.row];
+    NSManagedObject *airline;
+    if(self.showFavMode){
+        airline = [self.favObjects objectAtIndex:indexPath.row];
+    }
+    else{
+        airline = [self.objects objectAtIndex:indexPath.row];
+    }
     NSString *imageUrl = [kBaseURL stringByAppendingString:[airline valueForKey:kJSONDataKeyLogoURL]];
     [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     cell.textLabel.text = [airline valueForKey:kJSONDataKeyName];
@@ -201,42 +204,28 @@ static NSString *kCellIndentifier = @"Cell";
 
 #pragma mark delete delegate
 
-- (void)didRemoveFavoriteObject:(NSManagedObject *)objectToRemove{
+-(void)didUpdateFavoriteObject:(NSManagedObject *)objectToUpdate{
     
     NSManagedObjectContext *context = [self managedObjectContext];
-    
-    [objectToRemove setValue:[NSNumber numberWithBool:NO] forKey:kJSONDataKeyIsFavorite];
     
     NSError *error = nil;
     if (![context save:&error]) {
         NSLog(@"Can't Delete! %@ %@", error, [error localizedDescription]);
         return;
     }
-    else{
-        NSLog(@"Saved %@", objectToRemove);
-    }
-    
-    [self.tableView reloadData];
-    
 }
 
--(void)didInsertFavoriteObject:(NSManagedObject *)objectToAdd{
+-(BOOL)checkIsFavoriteObject:(NSManagedObject *)objectToCheck{
     
-    NSManagedObjectContext *context = [self managedObjectContext];
+    NSMutableArray *favoriteObjects = [self getfavouriteObjects];
     
-    [objectToAdd setValue:[NSNumber numberWithBool:YES] forKey:kJSONDataKeyIsFavorite];
-    
-    NSError *error = nil;
-    if (![context save:&error]) {
-        NSLog(@"Can't add! %@ %@", error, [error localizedDescription]);
-        return;
-    }
-    else{
-        NSLog(@"Saved %@", objectToAdd);
+    for (NSManagedObject *object in favoriteObjects) {
+        
+        if([[object valueForKey:kJSONDataKeyCode] isEqualToString:[objectToCheck valueForKey:kJSONDataKeyCode]])
+            return YES;
     }
     
-    [self.tableView reloadData];
-    
+    return NO;
 }
 
 

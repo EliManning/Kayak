@@ -16,5 +16,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
+-(void)fetchDataWithUrlString:(NSString *)urlString  block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
+
 @end
 
